@@ -47,9 +47,9 @@ alembic==1.5.8 \
     --hash=sha256:8a259f0a4c8b350b03579d77ce9e810b19c65bf0af05f84efb69af13ad50801e \
     --hash=sha256:e27fd67732c97a1c370c33169ef4578cf96436fa0e7dcfaeeef4a917d0737d56
     # via jupyterhub
-anyio==2.2.0 \
-    --hash=sha256:4a41c5b3a65ed92e469d51b6fba3779301850ea2e352afcf9e36c46f21ee14a9 \
-    --hash=sha256:aa3da546ed17f097ca876c78024dea380a3b7fa80759abfdda59f12176a3dac8
+anyio==3.0.0 \
+    --hash=sha256:b553598332c050af19f7d41f73a7790142f5bc3d5eb8bd82f5e515ec22019bd9 \
+    --hash=sha256:e71c3d9d72291d12056c0265d07c6bbedf92332f78573e278aeb116f24f30395
     # via jupyter-server
 appdirs==1.4.4 \
     --hash=sha256:7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41 \
@@ -193,7 +193,9 @@ click==7.1.2 \
 colorama==0.4.4 \
     --hash=sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b \
     --hash=sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2
-    # via rich
+    # via
+    #   nbdime
+    #   rich
 commonmark==0.9.1 \
     --hash=sha256:452f9dc859be7f06631ddcb328b6919c67984aca654e5fefb3914d54691aed60 \
     --hash=sha256:da2f38c92590f83de410ba1a3cbceafbc74fee9def35f9251ba9a971d6d66fd9
@@ -265,6 +267,14 @@ filelock==3.0.12 \
     --hash=sha256:18d82244ee114f543149c66a6e0c14e9c4f8a1044b5cdaadd0f82159d6a6ff59 \
     --hash=sha256:929b7d63ec5b7d6b71b0fa5ac14e030b3f70b75747cef1b10da9b879fef15836
     # via virtualenv
+gitdb==4.0.7 \
+    --hash=sha256:6c4cc71933456991da20917998acbe6cf4fb41eeaab7d6d67fbc05ecd4c865b0 \
+    --hash=sha256:96bf5c08b157a666fec41129e6d327235284cca4c81e92109260f353ba138005
+    # via gitpython
+gitpython==3.1.14 \
+    --hash=sha256:3283ae2fba31c913d857e12e5ba5f9a7772bbc064ae2bb09efafa71b0dd4939b \
+    --hash=sha256:be27633e7509e58391f10207cd32b2a6cf5b908f92d9cd30da2e514e1137af61
+    # via nbdime
 google-auth==1.29.0 \
     --hash=sha256:010f011c4e27d3d5eb01106fba6aac39d164842dfcd8709955c4638f5b11ccf8 \
     --hash=sha256:f30a672a64d91cc2e3137765d088c5deec26416246f7a9e956eaf69a8d7ed49c
@@ -368,6 +378,7 @@ jinja2==2.11.3 \
     #   jupyterlab
     #   jupyterlab-server
     #   nbconvert
+    #   nbdime
     #   notebook
     #   openshift
 json5==0.9.5 \
@@ -451,14 +462,21 @@ jupyter-require==0.6.1 \
     # via
     #   jupyter-nbrequirements
     #   jupyter-nbutils
+jupyter-server-mathjax==0.2.2 \
+    --hash=sha256:0f75fc1ed6fc3a6d94ea9c87932cfd7a43b8c11721b7c3f01281116469280011 \
+    --hash=sha256:93a9e2684507dff6e125f5f1a470760e2b3ed86031856af95bb0be6e6b0652ef
+    # via nbdime
 jupyter-server==1.4.1 \
     --hash=sha256:af518ce295bfaa0d5c05031f963bdcfcd2ab156cb2223c0a70665219aed338da \
     --hash=sha256:b0126f237f679533eec46244cfc66d61e3a1f8ec0fad2d47352fa19d3e754e47
     # via
     #   -r requirements.in
+    #   jupyter-server-mathjax
     #   jupyterlab
+    #   jupyterlab-git
     #   jupyterlab-server
     #   nbclassic
+    #   nbdime
 jupyter-telemetry==0.1.0 \
     --hash=sha256:1de3e423b23aa40ca4a4238d65c56dda544061ff5aedc3f7647220ed7e3b9589 \
     --hash=sha256:445c613ae3df70d255fe3de202f936bba8b77b4055c43207edf22468ac875314
@@ -470,6 +488,10 @@ jupyter_kernel_gateway==2.4.0 \
 jupyterhub==1.4.0 \
     --hash=sha256:bfad997849fb066276349b951a9ad7455b3beaaaead095b3d9bf5b14bd1c7e96 \
     --hash=sha256:de9756ba4dd052d52410e4597ef037e77d04be2694e294124355fe8a871b2735
+    # via -r requirements.in
+jupyterlab-git==0.30.0b2 \
+    --hash=sha256:03f8fa1ab8bbf53c3f53be73188fef7a012d1860ea046c61ab8ccb2156d37d5b \
+    --hash=sha256:1b4e9f292fbcf74beef6c0a464a7aba629c6164a62c9da2594836c9e00d29e18
     # via -r requirements.in
 jupyterlab-pygments==0.1.2 \
     --hash=sha256:abfb880fd1561987efaefcb2d2ac75145d2a5d0139b1876d5be806e32f630008 \
@@ -661,6 +683,10 @@ nbconvert==6.0.7 \
     #   jupyter-latex-envs
     #   jupyter-server
     #   notebook
+nbdime==3.0.0 \
+    --hash=sha256:1777a7133c084a21f8e22f1be370436ae2fbde1991934170678fa8f826fd9b15 \
+    --hash=sha256:e28da1d79344a4ae2c8ecba0ee3b849909bba5403d913a091e6d430c55ead944
+    # via jupyterlab-git
 nbformat==5.1.3 \
     --hash=sha256:b516788ad70771c6250977c1374fcca6edebe6126fd2adb5a69aa5c2356fd1c8 \
     --hash=sha256:eb8447edd7127d043361bc17f2f5a807626bc8e878c7709a1c647abda28a9171
@@ -668,6 +694,7 @@ nbformat==5.1.3 \
     #   jupyter-server
     #   nbclient
     #   nbconvert
+    #   nbdime
     #   notebook
 nest-asyncio==1.5.1 \
     --hash=sha256:76d6e972265063fe92a90b9cc4fb82616e07d586b346ed9d2c89a4187acea39c \
@@ -700,6 +727,7 @@ packaging==20.9 \
     #   bleach
     #   jupyter-packaging
     #   jupyterlab
+    #   jupyterlab-git
     #   jupyterlab-server
     #   thoth-python
 pamela==1.0.0 \
@@ -719,6 +747,7 @@ pexpect==4.8.0 \
     # via
     #   delegator.py
     #   ipython
+    #   jupyterlab-git
 pickleshare==0.7.5 \
     --hash=sha256:87683d47965c1da65cdacaf31c8441d12b8044cdec9aca500cd78fc2c683afca \
     --hash=sha256:9649af414d74d4df115d5d718f82acb59c9d418196b7b4290ed47a12ce62df56
@@ -765,6 +794,7 @@ pygments==2.8.1 \
     #   ipython
     #   jupyterlab-pygments
     #   nbconvert
+    #   nbdime
     #   rich
 pyopenssl==20.0.1 \
     --hash=sha256:4c231c759543ba02560fcd2480c48dcec4dae34c9da7d3747c508227e0624b51 \
@@ -892,6 +922,7 @@ requests==2.25.1 \
     #   jupyterhub
     #   jupyterlab-server
     #   kubernetes
+    #   nbdime
     #   requests-oauthlib
     #   thamos
     #   thoth-analyzer
@@ -973,12 +1004,17 @@ six==1.15.0 \
     #   google-auth
     #   jsonschema
     #   kubernetes
+    #   nbdime
     #   openshift
     #   pyopenssl
     #   python-dateutil
     #   thamos
     #   virtualenv
     #   websocket-client
+smmap==4.0.0 \
+    --hash=sha256:7e65386bd122d45405ddf795637b7f7d2b532e7e401d46bbe3fb49b9986d5182 \
+    --hash=sha256:a9a7479e4c572e2e775c404dcd3080c8dc49f39918c2cf74913d30c4c478e3c2
+    # via gitdb
 sniffio==1.2.0 \
     --hash=sha256:471b71698eac1c2112a40ce2752bb2f4a4814c22a54a3eed3676bc0f5ca9f663 \
     --hash=sha256:c4666eecec1d3f50960c6bdf61ab7bc350648da6c126e3cf6898d8cd4ddcd3de
@@ -1114,6 +1150,7 @@ tornado==6.1 \
     #   jupyter-server
     #   jupyterhub
     #   jupyterlab
+    #   nbdime
     #   notebook
     #   terminado
 traitlets==5.0.5 \
@@ -1155,9 +1192,9 @@ urllib3==1.26.4 \
     #   requests
     #   sentry-sdk
     #   thamos
-virtualenv==20.4.3 \
-    --hash=sha256:49ec4eb4c224c6f7dd81bb6d0a28a09ecae5894f4e593c89b0db0885f565a107 \
-    --hash=sha256:83f95875d382c7abafe06bd2a4cdd1b363e1bb77e02f155ebe8ac082a916b37c
+virtualenv==20.4.4 \
+    --hash=sha256:09c61377ef072f43568207dc8e46ddeac6bcdcaf288d49011bda0e7f4d38c4a2 \
+    --hash=sha256:a935126db63128861987a7d5d30e23e8ec045a73840eeccb467c148514e29535
     # via thamos
 wcwidth==0.2.5 \
     --hash=sha256:beb4802a9cebb9144e99086eff703a642a13d6a0052920003a230f3294bbe784 \

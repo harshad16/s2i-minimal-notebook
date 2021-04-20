@@ -13,6 +13,8 @@ jupyterlab-requirements = ">=0.6.4"
 jupyter_kernel_gateway = "==2.4.0"
 jupyter-nbrequirements = "*"
 supervisor = "==4.1.0"
+jupyterlab-git = "==0.30.0b2"
+
 jupyter_nbextensions_configurator = "*"
 ipython = "==7.16.1"
 cryptography = "==3.3.1"

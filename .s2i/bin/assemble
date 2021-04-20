@@ -6,6 +6,8 @@ set -eo pipefail
 
 APP_ROOT=${APP_ROOT:-/opt/app-root/src}
 
+ls -la /opt/app-root
+ls -la /opt/app-root/src
 
 # Run the original Python S2I assemble script to install packages.
 
@@ -98,6 +100,9 @@ jupyter nbextension enable  --sys-prefix publish
 # pip install -U jupyter_nbextensions_configurator
 
 jupyter nbextensions_configurator enable --sys-prefix
+
+
+jupyter lab build
 
 # Apply custom notebook configuration
 
