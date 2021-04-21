@@ -14,6 +14,8 @@ jupyter_kernel_gateway = "==2.4.0"
 jupyter-nbrequirements = "*"
 supervisor = "==4.1.0"
 jupyterlab-git = "==0.30.0b2"
+jupyter-packaging = "<=0.9.1"
+jupyter-server = "<=1.6.2"
 
 [requires]
 python_version = "3.8"

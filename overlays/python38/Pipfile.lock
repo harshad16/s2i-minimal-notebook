@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a67384a4509054e5c965209787578376d805c53c30b90ca2c6987570887e6045"
+            "sha256": "6542f98d9e3e53592fd3c955447e643b072cdfddb73a9e44c6172b1edea7a1d0"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -69,11 +69,11 @@
         },
         "anyio": {
             "hashes": [
-                "sha256:4a41c5b3a65ed92e469d51b6fba3779301850ea2e352afcf9e36c46f21ee14a9",
-                "sha256:aa3da546ed17f097ca876c78024dea380a3b7fa80759abfdda59f12176a3dac8"
+                "sha256:b553598332c050af19f7d41f73a7790142f5bc3d5eb8bd82f5e515ec22019bd9",
+                "sha256:e71c3d9d72291d12056c0265d07c6bbedf92332f78573e278aeb116f24f30395"
             ],
             "markers": "python_full_version >= '3.6.2'",
-            "version": "==2.2.0"
+            "version": "==3.0.0"
         },
         "appdirs": {
             "hashes": [
@@ -588,11 +588,11 @@
         },
         "jupyter-packaging": {
             "hashes": [
-                "sha256:780082b43506eccb3fb39ed9306300b637245e622a9644701c60d89992468822",
-                "sha256:7d2cff62d0b0cf5267f5cd9edb4bd04591f68aa919bf026e7787f0424c0e7c55"
+                "sha256:6f819759804536f9e563cc8a76a9d8588bb90cd735deaa550a6d8453012b0164",
+                "sha256:a3e6135d2f287cb66d1fc25d02307c68fa77bb93269c3b21dfe814efc1f9c4ed"
             ],
-            "markers": "python_version >= '3.6'",
-            "version": "==0.9.2"
+            "index": "pypi",
+            "version": "==0.9.1"
         },
         "jupyter-require": {
             "hashes": [
@@ -603,11 +603,11 @@
         },
         "jupyter-server": {
             "hashes": [
-                "sha256:76aaf747ed86edf526d0ee072e9b83c351701396b9922af2d92c8fe44da878be",
-                "sha256:76e120be658080a63d0fba34e97b75a13dd8aae391d6f59e7f01b16cf7d495d5"
+                "sha256:17b5216a09104202fca73e51df21465f2a3e34e795f0a0f7004f6c67d9527f85",
+                "sha256:c863481c4f6fc7c9fcb82b5f903b5a73742bb89b2b4d1babc814116a3dc40635"
             ],
-            "markers": "python_version >= '3.6'",
-            "version": "==1.6.3"
+            "index": "pypi",
+            "version": "==1.6.2"
         },
         "jupyter-server-mathjax": {
             "hashes": [
